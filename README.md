@@ -7,3 +7,5 @@ Use `$ gsi file.scm`.
 ## Chapter 1
 - *normal-order evaluation* = fully-expand and then reduce
 - *applicative-order evaluation* = evaluate the arguments and then apply; more efficient
+- math: usually *declarative* descriptions (what is); computer science:
+*imperative* descriptions (how to)
