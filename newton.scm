@@ -2,6 +2,11 @@
 
 (define eps 0.001)
 
+;; Exercise 1.6
+(define (new-if predicate then-clause else-clause)
+ (cond (predicate then-clause)
+       (else else-clause)))
+
 (define (good-enough? guess x)
  (< (abs (- (square guess) x)) eps))
 
@@ -13,8 +18,10 @@
 
 (define (sqrt-iter guess x)
  (if (good-enough? guess x)
-  guess
-  (sqrt-iter (improve guess x) x)))
+;; Would never finish: recursively calls sqrt-iter and never new-if.
+;; (new-if (good-enough? guess x)
+	 guess
+	 (sqrt-iter (improve guess x) x)))
 
 (define (nsqrt x)
  (sqrt-iter 1.0 x))
