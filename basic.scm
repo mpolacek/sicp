@@ -17,8 +17,6 @@
        ((= x 0) 0)
        ((< x 0) (- x))))
 
-(display (abs 42)) (newline)
-(display (abs 0)) (newline)
 (display (abs -5)) (newline)
 
 (define (abs2 x)
@@ -43,6 +41,7 @@
 ;; Exercise 1.3
 (define (foo a b c)
  (if (> a b)
+     ;; Do we have swap in Scheme?
      (if (> b c)
          (+ (square a) (square b))
          (+ (square a) (square c)))
@@ -57,3 +56,13 @@
 (display (foo 2 3 1)) (newline)
 (display (foo 3 2 1)) (newline)
 (display (foo 3 1 2)) (newline)
+
+;; Exercise 1.5
+(define (p) (p))
+(define (test x y)
+ (if (= x 0)
+     0
+     y))
+;; Infinite loop in applicative-order evaluation.
+;;(test 0 (p))
+;; (p) -> (p) -> ...
