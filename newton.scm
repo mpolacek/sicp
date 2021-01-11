@@ -30,6 +30,7 @@
 (display (nsqrt 2)) (newline)
 (display (nsqrt 3)) (newline)
 (display (nsqrt 9)) (newline)
+(display (nsqrt 0.001)) (newline)
 
 ;; Exercise 1.7
 ;; good-enough? fails for small and large numbers:
@@ -68,5 +69,4 @@
 (display (nsqrt-alt 9)) (newline)
 (display (nsqrt-alt 1e48)) (newline)
 ;; 1e49 still doesn't work :(
-;; and this still gives an imprecise result.
 (display (nsqrt-alt 0.001)) (newline)
