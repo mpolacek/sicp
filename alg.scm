@@ -1,5 +1,6 @@
 ;; Random stuff in Scheme.
 
+;; Linear recursive process.
 (define (fac n)
  (if (= n 1)
   1
@@ -31,6 +32,7 @@
 (display (fib 12)) (newline)
 (display (fib 13)) (newline)
 
+;; Linear iterative process.
 (define (factorial n)
  (define (iter product counter)
   (if (> counter n)
