@@ -70,3 +70,24 @@
 (display (nsqrt-alt 1e48)) (newline)
 ;; 1e49 still doesn't work :(
 (display (nsqrt-alt 0.001)) (newline)
+
+;; Exercise 1.8
+;; Newton's cube root.
+(define (good-enough-cube? guess x)
+ (= (improve-cube guess x) guess))
+
+(define (improve-cube guess x)
+ (/ (+ (/ x (* guess guess)) (* 2 guess)) 3))
+
+(define (cube-root-iter guess x)
+ (if (good-enough-cube? guess x)
+      guess
+      (cube-root-iter (improve-cube guess x) x)))
+
+(define (cube-root x)
+ (cube-root-iter 1.0 x))
+
+(display (cube-root 27)) (newline)
+(display (cube-root 64)) (newline)
+(display (cube-root 729)) (newline)
+(display (cube-root 7)) (newline)
