@@ -1,6 +1,7 @@
 ;; SICP 1.1.7 Square Roots by Newton's Method.
 
 (define eps 0.001)
+(define (square x) (* x x))
 
 ;; Exercise 1.6
 (define (new-if predicate then-clause else-clause)
